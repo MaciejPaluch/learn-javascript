@@ -16,6 +16,7 @@ const ulEl = document.getElementById("ul-el")
 
 inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value)
+    localStorage.setItem(`lead${myLeads.length}`, inputEl.value)
     inputEl.value = ""
     renderLeads()
 })
@@ -31,5 +32,7 @@ function renderLeads() {
             </li>
         `
     }
-    ulEl.innerHTML = listItems  
+    ulEl.innerHTML = listItems
 }
+
+console.log(localStorage.getItem("lead3"))
